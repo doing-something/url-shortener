@@ -1,0 +1,50 @@
+service: urlshortener
+
+frameworkVersion: '>=1.8.0 <2.0.0'
+
+provider:
+    name: aws
+    runtime: nodejs8.10
+    stage: dev
+    region: ap-northeast-2
+    environment:
+        SLS_STAGE: ${opt:stage, self:provider.stage}
+
+functions:
+    main:
+        handler: main/index.handler
+        events:
+            - http:
+                  path: /
+                  method: get
+    create:
+        handler: create/index.handler
+        events:
+            - http:
+                  path: /
+                  method: post
+    redirect:
+        handler: redirect/index.handler
+        events:
+            - http:
+                  path: /{slug}
+                  method: get
+        environment:
+            URL_INSTALL: https://serverless.com/framework/docs/providers/aws/guide/installation/
+            URL_ABCD: http://serverless.com/
+            URL_AWS: https://aws.amazon.com/
+resources:
+    Resources:
+        LinkDB:
+            Type: 'AWS::DynamoDB::Table'
+            Properties:
+                AttributeDefinitions:
+                    - AttributeName: slug
+                      AttributeType: S
+                KeySchema:
+                    - AttributeName: slug
+                      KeyType: HASH
+                ProvisionedThroughput:
+                    ReadCapacityUnits: 2
+                    WriteCapacityUnits: 2
+                TableName: '${opt:stage, self:provider.stage}-shortened-urls'
