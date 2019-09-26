@@ -2,7 +2,7 @@
 
 const AWS = require('aws-sdk');
 
-const tableName = `${process.env.SLS_STAGE}-shortened-urls`;
+const tableName = process.env.DDB_TABLE;
 const docClient = new AWS.DynamoDB.DocumentClient();
 
 module.exports.handler = (event, context, callback) => {
@@ -12,14 +12,14 @@ module.exports.handler = (event, context, callback) => {
     docClient.get(
         {
             TableName: tableName,
-            key: {
+            Key: {
                 slug: slug
             }
         },
         (err, data) => {
-            console.log(data);
+            console.log('data', data);
             if (err) {
-                console.log(err);
+                console.log('err', err);
                 return callback(err);
             }
 

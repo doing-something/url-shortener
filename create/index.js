@@ -4,7 +4,7 @@ const querystring = require('querystring');
 const path = require('path');
 const crypto = require('crypto');
 
-const tableName = `${process.env.SLS_STAGE}-shortened-urls`;
+const tableName = process.env.DDB_TABLE;
 const docClient = new AWS.DynamoDB.DocumentClient();
 
 function renderPage(link, submitted) {
