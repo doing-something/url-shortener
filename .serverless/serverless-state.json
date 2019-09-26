@@ -134,7 +134,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/urlshortener/dev/1569421745905-2019-09-25T14:29:05.905Z/urlshortener.zip"
+                "S3Key": "serverless/urlshortener/dev/1569479773177-2019-09-26T06:36:13.177Z/urlshortener.zip"
               },
               "FunctionName": "urlshortener-dev-main",
               "Handler": "main/index.handler",
@@ -158,14 +158,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "MainLambdaVersionh5ZrslTdkAojHfUPgIXc9MkNMAPfxsP4lyCpfSPJi8": {
+          "MainLambdaVersionOop68Wci9zL8N1xEW1jwWJ0F816tLSzNOvP58CYbI": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "MainLambdaFunction"
               },
-              "CodeSha256": "o6ZpPuoaTgxWyCsB3BlrERuzPYTDhv3asCZr4Qb18/A="
+              "CodeSha256": "3jOvWqlmJquc2lH6EwjG7rqh/DwqJ8U1beMrPCQfV7s="
             }
           },
           "CreateLambdaFunction": {
@@ -175,7 +175,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/urlshortener/dev/1569421745905-2019-09-25T14:29:05.905Z/urlshortener.zip"
+                "S3Key": "serverless/urlshortener/dev/1569479773177-2019-09-26T06:36:13.177Z/urlshortener.zip"
               },
               "FunctionName": "urlshortener-dev-create",
               "Handler": "create/index.handler",
@@ -199,14 +199,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "CreateLambdaVersionFgahlUz4B0V19dWDWCnBOTzooEVS7OA9Z3ROG6CULPQ": {
+          "CreateLambdaVersionir84w7vYpXND6LnCbnIhDK9TXZYw3VKtaxjbZCIJf8": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateLambdaFunction"
               },
-              "CodeSha256": "o6ZpPuoaTgxWyCsB3BlrERuzPYTDhv3asCZr4Qb18/A="
+              "CodeSha256": "3jOvWqlmJquc2lH6EwjG7rqh/DwqJ8U1beMrPCQfV7s="
             }
           },
           "RedirectLambdaFunction": {
@@ -216,7 +216,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/urlshortener/dev/1569421745905-2019-09-25T14:29:05.905Z/urlshortener.zip"
+                "S3Key": "serverless/urlshortener/dev/1569479773177-2019-09-26T06:36:13.177Z/urlshortener.zip"
               },
               "FunctionName": "urlshortener-dev-redirect",
               "Handler": "redirect/index.handler",
@@ -243,14 +243,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "RedirectLambdaVersionefUFRnhLCHKVxw34bbySAl5o5L6NM6gmZ0xiL8Lt0vU": {
+          "RedirectLambdaVersionPPAVvV6nzpKW457Rqi65QMjFQbjRsNf3t5KrN7muU": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "RedirectLambdaFunction"
               },
-              "CodeSha256": "o6ZpPuoaTgxWyCsB3BlrERuzPYTDhv3asCZr4Qb18/A="
+              "CodeSha256": "3jOvWqlmJquc2lH6EwjG7rqh/DwqJ8U1beMrPCQfV7s="
             }
           },
           "ApiGatewayRestApi": {
@@ -414,7 +414,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1569421745333": {
+          "ApiGatewayDeployment1569479772083": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -571,19 +571,19 @@
           "MainLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "MainLambdaVersionh5ZrslTdkAojHfUPgIXc9MkNMAPfxsP4lyCpfSPJi8"
+              "Ref": "MainLambdaVersionOop68Wci9zL8N1xEW1jwWJ0F816tLSzNOvP58CYbI"
             }
           },
           "CreateLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateLambdaVersionFgahlUz4B0V19dWDWCnBOTzooEVS7OA9Z3ROG6CULPQ"
+              "Ref": "CreateLambdaVersionir84w7vYpXND6LnCbnIhDK9TXZYw3VKtaxjbZCIJf8"
             }
           },
           "RedirectLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "RedirectLambdaVersionefUFRnhLCHKVxw34bbySAl5o5L6NM6gmZ0xiL8Lt0vU"
+              "Ref": "RedirectLambdaVersionPPAVvV6nzpKW457Rqi65QMjFQbjRsNf3t5KrN7muU"
             }
           },
           "ServiceEndpoint": {
@@ -734,7 +734,7 @@
     "artifact": "/home/skyparci/work/test/aws/url-shortener/.serverless/urlshortener.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/urlshortener/dev/1569421745905-2019-09-25T14:29:05.905Z",
+    "artifactDirectoryName": "serverless/urlshortener/dev/1569479773177-2019-09-26T06:36:13.177Z",
     "artifact": "urlshortener.zip"
   }
 }
