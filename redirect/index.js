@@ -13,7 +13,7 @@ module.exports.handler = (event, context, callback) => {
         {
             TableName: tableName,
             key: {
-                slug
+                slug: slug
             }
         },
         (err, data) => {

@@ -13,6 +13,16 @@
       "environment": {
         "SLS_STAGE": "dev"
       },
+      "iamRoleStatements": [
+        {
+          "Action": [
+            "dynamodb:GetItem",
+            "dynamodb:PutItem"
+          ],
+          "Resource": "arn:aws:dynamodb:ap-northeast-2:930589189284:table/dev-shortened-urls",
+          "Effect": "Allow"
+        }
+      ],
       "versionFunctions": true,
       "remoteFunctionData": null,
       "compiledCloudFormationTemplate": {
@@ -106,6 +116,9 @@
                             "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/urlshortener-dev*:*:*"
                           }
                         ]
+                      },
+                      {
+                        "$ref": "$[\"service\"][\"provider\"][\"iamRoleStatements\"][0]"
                       }
                     ]
                   }
@@ -134,7 +147,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/urlshortener/dev/1569479773177-2019-09-26T06:36:13.177Z/urlshortener.zip"
+                "S3Key": "serverless/urlshortener/dev/1569483345073-2019-09-26T07:35:45.073Z/urlshortener.zip"
               },
               "FunctionName": "urlshortener-dev-main",
               "Handler": "main/index.handler",
@@ -158,14 +171,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "MainLambdaVersionOop68Wci9zL8N1xEW1jwWJ0F816tLSzNOvP58CYbI": {
+          "MainLambdaVersionYXJbowBiHzDJDngtwtlGGLh2gDJT7Jl2HQdgrMt6RA": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "MainLambdaFunction"
               },
-              "CodeSha256": "3jOvWqlmJquc2lH6EwjG7rqh/DwqJ8U1beMrPCQfV7s="
+              "CodeSha256": "62d4bD33J2alMlDi/GO+HycN8V7SPuo0pmzHuDQ0nhE="
             }
           },
           "CreateLambdaFunction": {
@@ -175,7 +188,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/urlshortener/dev/1569479773177-2019-09-26T06:36:13.177Z/urlshortener.zip"
+                "S3Key": "serverless/urlshortener/dev/1569483345073-2019-09-26T07:35:45.073Z/urlshortener.zip"
               },
               "FunctionName": "urlshortener-dev-create",
               "Handler": "create/index.handler",
@@ -199,14 +212,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "CreateLambdaVersionir84w7vYpXND6LnCbnIhDK9TXZYw3VKtaxjbZCIJf8": {
+          "CreateLambdaVersion8Oa4dIslRFdsmxX6u8gem8xQ7Bd1v2oRjIF3nRfCY7Q": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateLambdaFunction"
               },
-              "CodeSha256": "3jOvWqlmJquc2lH6EwjG7rqh/DwqJ8U1beMrPCQfV7s="
+              "CodeSha256": "62d4bD33J2alMlDi/GO+HycN8V7SPuo0pmzHuDQ0nhE="
             }
           },
           "RedirectLambdaFunction": {
@@ -216,7 +229,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/urlshortener/dev/1569479773177-2019-09-26T06:36:13.177Z/urlshortener.zip"
+                "S3Key": "serverless/urlshortener/dev/1569483345073-2019-09-26T07:35:45.073Z/urlshortener.zip"
               },
               "FunctionName": "urlshortener-dev-redirect",
               "Handler": "redirect/index.handler",
@@ -243,14 +256,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "RedirectLambdaVersionPPAVvV6nzpKW457Rqi65QMjFQbjRsNf3t5KrN7muU": {
+          "RedirectLambdaVersionfdvTi7t3bIDAC1CiRxf5vxfBZyjjjQF1aaK8hVkVwbM": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "RedirectLambdaFunction"
               },
-              "CodeSha256": "3jOvWqlmJquc2lH6EwjG7rqh/DwqJ8U1beMrPCQfV7s="
+              "CodeSha256": "62d4bD33J2alMlDi/GO+HycN8V7SPuo0pmzHuDQ0nhE="
             }
           },
           "ApiGatewayRestApi": {
@@ -414,7 +427,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1569479772083": {
+          "ApiGatewayDeployment1569483344315": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -571,19 +584,19 @@
           "MainLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "MainLambdaVersionOop68Wci9zL8N1xEW1jwWJ0F816tLSzNOvP58CYbI"
+              "Ref": "MainLambdaVersionYXJbowBiHzDJDngtwtlGGLh2gDJT7Jl2HQdgrMt6RA"
             }
           },
           "CreateLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateLambdaVersionir84w7vYpXND6LnCbnIhDK9TXZYw3VKtaxjbZCIJf8"
+              "Ref": "CreateLambdaVersion8Oa4dIslRFdsmxX6u8gem8xQ7Bd1v2oRjIF3nRfCY7Q"
             }
           },
           "RedirectLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "RedirectLambdaVersionPPAVvV6nzpKW457Rqi65QMjFQbjRsNf3t5KrN7muU"
+              "Ref": "RedirectLambdaVersionfdvTi7t3bIDAC1CiRxf5vxfBZyjjjQF1aaK8hVkVwbM"
             }
           },
           "ServiceEndpoint": {
@@ -734,7 +747,7 @@
     "artifact": "/home/skyparci/work/test/aws/url-shortener/.serverless/urlshortener.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/urlshortener/dev/1569479773177-2019-09-26T06:36:13.177Z",
+    "artifactDirectoryName": "serverless/urlshortener/dev/1569483345073-2019-09-26T07:35:45.073Z",
     "artifact": "urlshortener.zip"
   }
 }

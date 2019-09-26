@@ -9,6 +9,12 @@ provider:
     region: ap-northeast-2
     environment:
         SLS_STAGE: ${opt:stage, self:provider.stage}
+    iamRoleStatements:
+        - Action:
+              - dynamodb:GetItem
+              - dynamodb:PutItem
+          Resource: 'arn:aws:dynamodb:ap-northeast-2:930589189284:table/dev-shortened-urls'
+          Effect: Allow
 
 functions:
     main:
